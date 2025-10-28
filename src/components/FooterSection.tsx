@@ -1,27 +1,22 @@
+import type { FooterSectionType } from "../types/FooterSectionType";
+
 interface FooterSectionProps {
-    title:string,
-    links:string[],
+  footer: FooterSectionType;
 }
 
-
-
-const FooterSection = () => {
+const FooterSection = ({ footer }: FooterSectionProps) => {
   return (
-    <div className="pt-5 pl-5">
-        <h1 className="font-bold">About Youtube</h1>
-        <div className="grid gap-y-3 mt-6">
-            <a href="">About</a>
-            <a href="">Blog</a>
-            <a href="">How Youtube Works</a>
-            <a href="">Jobs</a>
-            <a href="">Press</a>
-            <a href="">YouTube Culture & Trends</a>
-            <a href="">NFL Sunday Ticket</a>
-        </div>
+    <div className="pt-5">
+      <h1 className="font-bold">{footer.title}</h1>
+      <div className="grid gap-y-3 mt-6">
+        {footer.links.map((link, index) => (
+          <a key={index} href="#" className="text-gray-600">
+            {link}
+          </a>
+        ))}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-
-
-export default FooterSection
+export default FooterSection;

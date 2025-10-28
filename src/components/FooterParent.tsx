@@ -1,12 +1,20 @@
-import FooterSection from "./FooterSection"
 
+import type { FooterSectionType } from "../types/FooterSectionType";
+import FooterSection from "./FooterSection";
 
-const FooterParent = () => {
-  return (
-    <div>
-        <FooterSection/>
-    </div>
-  )
+interface FooterParentProps {
+  data: FooterSectionType[];
 }
 
-export default FooterParent
+const FooterParent = ({ data }: FooterParentProps) => {
+  return (
+      <div className="flex justify-around">
+        {data.map((section, index) => (
+          <FooterSection key={index} footer={section} />
+        ))}
+      </div>
+  );
+};
+
+export default FooterParent;
+

@@ -1,10 +1,10 @@
 import FooterParent from "./components/FooterParent"
-import type { FooterSectionType } from "./types/FooterSextionType"
+import type { FooterSectionType } from "./types/FooterSectionType"
 
 
 function App() {
 
-  const sections:FooterSectionType[] = [{
+  const Sections:FooterSectionType[] = [{
     title:"About Youtube",
     links:["About", "Blog","How Youyube Works", "Jobs","Press","Youtube Culture & Trends", "NFL Sunday Tickets"]
   },
@@ -28,7 +28,7 @@ function App() {
 
   return (
     <>
-      <FooterParent />
+      <FooterParent data = {Sections}/>
     </>
   )
 }
